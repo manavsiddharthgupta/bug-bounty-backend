@@ -5,6 +5,8 @@ const bounties = require("./router/bounties");
 const applicaions = require("./router/applications");
 const mongoConnectingFunc = require("./utils/database").mongoConnectingFunc;
 
+const PORT = process.env.PORT || 3002;
+
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -20,4 +22,4 @@ app.use("/applications", applicaions);
 
 mongoConnectingFunc();
 
-app.listen(3002);
+app.listen(PORT);
